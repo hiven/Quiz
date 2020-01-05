@@ -80,7 +80,7 @@ CREATE TABLE admin
 CREATE TABLE student
 (
   _id INT PRIMARY KEY AUTO_INCREMENT,
-  roll_number VARCHAR(30) NOT NULL,
+/*  roll_number VARCHAR(30) NOT NULL, */
   user_id INT NOT NULL,
   CONSTRAINT student_user_id_fk FOREIGN KEY (user_id) REFERENCES user (_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
