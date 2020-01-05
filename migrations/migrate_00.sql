@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS quizportal;
+/* DROP DATABASE IF EXISTS quizportal; */
 
-CREATE DATABASE quizportal;
-USE quizportal;
+/* CREATE DATABASE quizportal; */
+/* USE quizportal; */
 
 CREATE TABLE user
 (
