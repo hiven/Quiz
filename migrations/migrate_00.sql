@@ -6,12 +6,12 @@
 CREATE TABLE user
 (
   _id INT PRIMARY KEY AUTO_INCREMENT,
-  first_name VARCHAR(50) NOT NULL,
-  last_name VARCHAR(50) NOT NULL,
+/*  first_name VARCHAR(50) NOT NULL, */
+/*  last_name VARCHAR(50) NOT NULL, */
   email VARCHAR(50) NOT NULL,
-  username VARCHAR(30) NOT NULL,
+/*  username VARCHAR(30) NOT NULL, */
   password VARCHAR(255) NOT NULL,
-  ph_no VARCHAR(10),
+/*  ph_no VARCHAR(10), */
   gender ENUM('m', 'f', 'u') DEFAULT 'u',
   join_time TIMESTAMP DEFAULT NOW(),
   avatar VARCHAR(500) DEFAULT 'https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png'
