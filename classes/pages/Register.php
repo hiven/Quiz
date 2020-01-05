@@ -3,13 +3,9 @@
 class Register extends BasicPage {
 
     private $defaults = [
-        'first_name' => 'First Name',
-        'last_name' => 'Last Name',
         'email' => 'Email',
-        'username' => 'Username',
         'password' => 'Password',
-        'password_two' => 'Repeat Password',
-        'roll_number' => 'Roll Number'
+        'password_two' => 'Repeat Password'
     ];
 
     private $values = array();
@@ -17,12 +13,7 @@ class Register extends BasicPage {
     private function verify() {
         $errors = array();
 
-        $required = ['first_name', 'last_name', 'email',
-            'username', 'password', 'password_two'];
-
-        if (isset($_POST['account_type']) && !strcmp($_POST['account_type'], 'Student')) {
-            array_push($required, 'roll_number');
-        }
+        $required = ['email', 'password', 'password_two'];
 
         foreach ($required as $field) {
             if (!isset($_POST[$field]) || strlen($_POST[$field]) == 0)
@@ -36,8 +27,6 @@ class Register extends BasicPage {
                 $errors[] = 'Passwords do not match!';
             else if(strlen($_POST['password']) < 6)
                 $errors[] = 'Password length must be greater than 6!';
-            else if(strlen($_POST['username']) < 4)
-                $errors[] = 'Username must be more than 3 characters!';
         }
 
         return $errors;
@@ -65,8 +54,6 @@ class Register extends BasicPage {
                 else {
                     if(strstr($result, '23000') && strstr($result, 'email'))
                         $errors[] = 'User with this email already exists!';
-                    else if(strstr($result, '23000') && strstr($result, 'username'))
-                        $errors[] = 'Username is already registered!';
                     else {
                         $this->values = array();
                         $success = "Successfully registered!";
