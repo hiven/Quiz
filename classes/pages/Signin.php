@@ -7,7 +7,7 @@ class Signin extends BasicPage {
     private function verify() {
         $errors = array();
 
-        $required = ['username',  'password'];
+        $required = ['email',  'password'];
 
         foreach ($required as $field) {
             if (!isset($_POST[$field]) || strlen($_POST[$field]) == 0)
@@ -28,7 +28,7 @@ class Signin extends BasicPage {
             $errors = $this->verify();
 
             if(count($errors) == 0) {
-                $id = User::doesUserExist($_POST['username']);
+                $id = User::doesUserExist($_POST['email']);
                 if ($id == 0) {
                     $errors[] = 'User does not exist! Please register first!';
                 } else if(!User::verifyUser($id, $_POST['password'])) {
