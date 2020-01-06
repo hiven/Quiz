@@ -1,11 +1,6 @@
 {
-    "name": "cloud-solutions/blueprint",
-    "description": "",
-    "license": "proprietary",
-    "type": "project",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://repo.packagist.com/cloud-solutions/"
-        }
+  "name": "cloud",
+  "description": "",
+  "license": "proprietary",
+  "type": "project"
 }
